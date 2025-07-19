@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Horario Ingeniería Electrónica - UPC</title>
+  <title>Mi Horario UPC</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f4f6f8;
+      background: #f0f2f5;
       padding: 20px;
     }
 
@@ -25,37 +25,38 @@
     }
 
     th, td {
-      border: 1px solid #ddd;
-      padding: 12px;
+      border: 1px solid #ccc;
+      padding: 10px;
       text-align: center;
+      height: 50px;
+      vertical-align: middle;
     }
 
     th {
       background-color: #003366;
       color: white;
+      position: sticky;
+      top: 0;
     }
 
-    td.vacio {
-      background-color: #f0f0f0;
+    td:hover {
+      background-color: #f0f8ff;
     }
 
-    .intro { background-color: #e0f7fa; }
-    .humanidades { background-color: #fff3cd; }
-    .algebra { background-color: #d1ecf1; }
-    .calculo { background-color: #d4edda; }
-    .tecnicas { background-color: #fce4ec; }
-    .algoritmos { background-color: #e8f5e9; }
-    .catedra { background-color: #ede7f6; }
+    .editable {
+      background-color: #fefefe;
+    }
 
     @media (max-width: 768px) {
-      table, thead, tbody, th, td, tr {
+      th, td {
         font-size: 12px;
+        padding: 6px;
       }
     }
   </style>
 </head>
 <body>
-  <h1>Horario - Ingeniería Electrónica UPC</h1>
+  <h1>Horario Semanal - Ingeniería Electrónica</h1>
   <table>
     <thead>
       <tr>
@@ -68,42 +69,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>06:00 - 06:59</td>
-        <td class="algebra">Álgebra Lineal<br>402 - BLQ C</td>
-        <td class="calculo" rowspan="2">Cálculo Diferencial<br>203 - BLQ H</td>
-        <td class="humanidades" rowspan="2">Humanidades I<br>506 - BLQ H</td>
-        <td class="calculo" rowspan="2">Cálculo Diferencial<br>203 - BLQ H</td>
-        <td class="tecnicas" rowspan="2">Técnicas de Autoaprendizaje<br>402 - BLQ C</td>
-      </tr>
-      <tr>
-        <td>07:00 - 07:59</td>
-        <td class="humanidades">Humanidades I<br>402 - BLQ C</td>
-      </tr>
-      <tr>
-        <td>08:00 - 09:59</td>
-        <td class="vacio"></td>
-        <td class="intro">Intro. a la Ing. Electrónica<br>302 - BLQ F</td>
-        <td class="vacio"></td>
-        <td class="algebra">Álgebra Lineal<br>301 - BLQ H</td>
-        <td class="intro">Intro. a la Ing. Electrónica<br>204 - BLQ E</td>
-      </tr>
-      <tr>
-        <td>10:00 - 11:59</td>
-        <td class="vacio"></td>
-        <td class="vacio"></td>
-        <td class="vacio"></td>
-        <td class="vacio"></td>
-        <td class="catedra">Cátedra Upecista<br>Aula Virtual</td>
-      </tr>
-      <tr>
-        <td>12:00 - 13:59</td>
-        <td class="algoritmos">Algoritmos y Fund. de Programación<br>201 - BLQ I</td>
-        <td class="vacio"></td>
-        <td class="vacio"></td>
-        <td class="vacio"></td>
-        <td class="algoritmos">Algoritmos y Fund. de Programación<br>201 - BLQ I</td>
-      </tr>
+      <!-- Puedes agregar o eliminar filas según lo necesites -->
+      <!-- Cada fila representa un bloque de 1 hora -->
+      <!-- Puedes agrupar celdas con rowspan="2" para materias de 2 horas -->
+      %ROWS%
     </tbody>
   </table>
 </body>

@@ -7,45 +7,45 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f4f6f9;
-      color: #333;
+      background: #f4f6f8;
       padding: 20px;
     }
 
     h1 {
       text-align: center;
+      color: #003366;
       margin-bottom: 20px;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
       background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
     th, td {
+      border: 1px solid #ddd;
       padding: 12px;
       text-align: center;
-      border: 1px solid #ddd;
     }
 
     th {
-      background-color: #005baa;
+      background-color: #003366;
       color: white;
     }
 
     td.vacio {
-      background-color: #f9f9f9;
+      background-color: #f0f0f0;
     }
 
-    .algebra { background-color: #cfe2ff; }
-    .calculo { background-color: #d1e7dd; }
-    .humanidades { background-color: #ffe5b4; }
-    .intro { background-color: #f8d7da; }
-    .tecnicas { background-color: #e2e3e5; }
-    .catedra { background-color: #e7d6f3; }
-    .algoritmos { background-color: #d4edda; }
+    .intro { background-color: #e0f7fa; }
+    .humanidades { background-color: #fff3cd; }
+    .algebra { background-color: #d1ecf1; }
+    .calculo { background-color: #d4edda; }
+    .tecnicas { background-color: #fce4ec; }
+    .algoritmos { background-color: #e8f5e9; }
+    .catedra { background-color: #ede7f6; }
 
     @media (max-width: 768px) {
       table, thead, tbody, th, td, tr {
@@ -69,53 +69,40 @@
     </thead>
     <tbody>
       <tr>
-        <td>6:00 AM</td>
-        <td class="algebra">Álgebra Lineal<br>402-BLQ C</td>
-        <td class="calculo">Cálculo Diferencial<br>203-BLQ H</td>
-        <td class="vacio"></td>
-        <td class="calculo">Cálculo Diferencial<br>203-BLQ H</td>
-        <td class="tecnicas">Téc. de Autoprendizaje<br>402-BLQ C</td>
+        <td>06:00 - 06:59</td>
+        <td class="algebra">Álgebra Lineal<br>402 - BLQ C</td>
+        <td class="calculo" rowspan="2">Cálculo Diferencial<br>203 - BLQ H</td>
+        <td class="humanidades" rowspan="2">Humanidades I<br>506 - BLQ H</td>
+        <td class="calculo" rowspan="2">Cálculo Diferencial<br>203 - BLQ H</td>
+        <td class="tecnicas" rowspan="2">Técnicas de Autoaprendizaje<br>402 - BLQ C</td>
       </tr>
       <tr>
-        <td>7:00 AM</td>
-        <td class="humanidades">Humanidades I<br>402-BLQ C</td>
-        <td class="vacio"></td>
-        <td class="humanidades">Humanidades I<br>506-BLQ H</td>
-        <td class="vacio"></td>
-        <td class="vacio"></td>
+        <td>07:00 - 07:59</td>
+        <td class="humanidades">Humanidades I<br>402 - BLQ C</td>
       </tr>
       <tr>
-        <td>8:00 AM</td>
+        <td>08:00 - 09:59</td>
         <td class="vacio"></td>
-        <td class="intro">Intro. Ing. Electrónica<br>302-BL F</td>
+        <td class="intro">Intro. a la Ing. Electrónica<br>302 - BLQ F</td>
         <td class="vacio"></td>
-        <td class="algebra">Álgebra Lineal<br>301-BLQ H</td>
-        <td class="intro">Intro. Ing. Electrónica<br>204-BLQ E</td>
+        <td class="algebra">Álgebra Lineal<br>301 - BLQ H</td>
+        <td class="intro">Intro. a la Ing. Electrónica<br>204 - BLQ E</td>
       </tr>
       <tr>
-        <td>9:00 AM</td>
-        <td class="vacio" colspan="5"></td>
-      </tr>
-      <tr>
-        <td>10:00 AM</td>
-        <td class="vacio" colspan="5"></td>
-      </tr>
-      <tr>
-        <td>11:00 AM</td>
-        <td class="vacio" colspan="4"></td>
+        <td>10:00 - 11:59</td>
+        <td class="vacio"></td>
+        <td class="vacio"></td>
+        <td class="vacio"></td>
+        <td class="vacio"></td>
         <td class="catedra">Cátedra Upecista<br>Aula Virtual</td>
       </tr>
       <tr>
-        <td>12:00 PM</td>
-        <td class="algoritmos">Algoritmos y Fund. Prog.<br>201-BLQ INFORMATIC</td>
+        <td>12:00 - 13:59</td>
+        <td class="algoritmos">Algoritmos y Fund. de Programación<br>201 - BLQ I</td>
         <td class="vacio"></td>
         <td class="vacio"></td>
         <td class="vacio"></td>
-        <td class="algoritmos">Algoritmos y Fund. Prog.<br>201-BLQ INFORMATIC</td>
-      </tr>
-      <tr>
-        <td>1:00 PM</td>
-        <td class="vacio" colspan="5"></td>
+        <td class="algoritmos">Algoritmos y Fund. de Programación<br>201 - BLQ I</td>
       </tr>
     </tbody>
   </table>

@@ -1,155 +1,123 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Horario Ingeniería Electrónica</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Horario Ingeniería Electrónica - UPC</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f8fafc;
-      color: #1e293b;
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      color: #333;
       padding: 20px;
     }
+
     h1 {
       text-align: center;
-      color: #0f172a;
+      margin-bottom: 20px;
     }
+
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background: white;
     }
+
     th, td {
-      border: 1px solid #cbd5e1;
       padding: 12px;
       text-align: center;
-      vertical-align: top;
+      border: 1px solid #ddd;
     }
+
     th {
-      background: #1e3a8a;
+      background-color: #005baa;
       color: white;
     }
-    td:hover {
-      background: #e0f2fe;
+
+    td.vacio {
+      background-color: #f9f9f9;
     }
-    .subject {
-      font-weight: bold;
-      color: #0f172a;
-    }
-    .info {
-      font-size: 12px;
-      color: #475569;
-    }
-    textarea {
-      width: 100%;
-      height: 50px;
-      resize: none;
-      margin-top: 5px;
-      font-size: 13px;
-    }
-    button {
-      margin-top: 5px;
-      background: #1e40af;
-      color: white;
-      border: none;
-      padding: 5px 10px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .tools {
-      text-align: center;
-      margin-top: 20px;
+
+    .algebra { background-color: #cfe2ff; }
+    .calculo { background-color: #d1e7dd; }
+    .humanidades { background-color: #ffe5b4; }
+    .intro { background-color: #f8d7da; }
+    .tecnicas { background-color: #e2e3e5; }
+    .catedra { background-color: #e7d6f3; }
+    .algoritmos { background-color: #d4edda; }
+
+    @media (max-width: 768px) {
+      table, thead, tbody, th, td, tr {
+        font-size: 12px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Horario Ingeniería Electrónica</h1>
-
-  <div class="tools">
-    <button onclick="exportarPDF()">Exportar a PDF</button>
-    <button onclick="limpiarTareas()">Limpiar Tareas</button>
-  </div>
-
-  <table id="horario">
-    <tr>
-      <th>Hora</th>
-      <th>Lunes</th>
-      <th>Martes</th>
-      <th>Miércoles</th>
-      <th>Jueves</th>
-      <th>Viernes</th>
-    </tr>
-    <tr>
-      <td>06:00</td>
-      <td id="Lun-6">
-        <div class="subject">MT301B</div>
-        Álgebra Lineal<br>
-        <div class="info">Grupo 08 - Electrónica</div>
-        <textarea placeholder="Añadir tarea..."></textarea>
-      </td>
-      <td id="Mar-6">
-        <div class="subject">MT302B</div>
-        Cálculo Diferencial<br>
-        <div class="info">Grupo 02 - Electrónica</div>
-        <textarea placeholder="Añadir tarea..."></textarea>
-      </td>
-      <td id="Mie-6">
-        <div class="subject">HM301</div>
-        Humanidades I<br>
-        <div class="info">Grupo 05 - Electrónica</div>
-        <textarea placeholder="Añadir tarea..."></textarea>
-      </td>
-      <td id="Jue-6">
-        <div class="subject">MT302B</div>
-        Cálculo Diferencial<br>
-        <div class="info">Grupo 02 - Electrónica</div>
-        <textarea placeholder="Añadir tarea..."></textarea>
-      </td>
-      <td id="Vie-6">
-        <div class="subject">PG312</div>
-        Técnicas de Autoaprendizaje<br>
-        <div class="info">Grupo 08 - Electrónica</div>
-        <textarea placeholder="Añadir tarea..."></textarea>
-      </td>
-    </tr>
-    <!-- Puedes seguir agregando más filas aquí -->
+  <h1>Horario - Ingeniería Electrónica UPC</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Hora</th>
+        <th>Lunes</th>
+        <th>Martes</th>
+        <th>Miércoles</th>
+        <th>Jueves</th>
+        <th>Viernes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>6:00 AM</td>
+        <td class="algebra">Álgebra Lineal<br>402-BLQ C</td>
+        <td class="calculo">Cálculo Diferencial<br>203-BLQ H</td>
+        <td class="vacio"></td>
+        <td class="calculo">Cálculo Diferencial<br>203-BLQ H</td>
+        <td class="tecnicas">Téc. de Autoprendizaje<br>402-BLQ C</td>
+      </tr>
+      <tr>
+        <td>7:00 AM</td>
+        <td class="humanidades">Humanidades I<br>402-BLQ C</td>
+        <td class="vacio"></td>
+        <td class="humanidades">Humanidades I<br>506-BLQ H</td>
+        <td class="vacio"></td>
+        <td class="vacio"></td>
+      </tr>
+      <tr>
+        <td>8:00 AM</td>
+        <td class="vacio"></td>
+        <td class="intro">Intro. Ing. Electrónica<br>302-BL F</td>
+        <td class="vacio"></td>
+        <td class="algebra">Álgebra Lineal<br>301-BLQ H</td>
+        <td class="intro">Intro. Ing. Electrónica<br>204-BLQ E</td>
+      </tr>
+      <tr>
+        <td>9:00 AM</td>
+        <td class="vacio" colspan="5"></td>
+      </tr>
+      <tr>
+        <td>10:00 AM</td>
+        <td class="vacio" colspan="5"></td>
+      </tr>
+      <tr>
+        <td>11:00 AM</td>
+        <td class="vacio" colspan="4"></td>
+        <td class="catedra">Cátedra Upecista<br>Aula Virtual</td>
+      </tr>
+      <tr>
+        <td>12:00 PM</td>
+        <td class="algoritmos">Algoritmos y Fund. Prog.<br>201-BLQ INFORMATIC</td>
+        <td class="vacio"></td>
+        <td class="vacio"></td>
+        <td class="vacio"></td>
+        <td class="algoritmos">Algoritmos y Fund. Prog.<br>201-BLQ INFORMATIC</td>
+      </tr>
+      <tr>
+        <td>1:00 PM</td>
+        <td class="vacio" colspan="5"></td>
+      </tr>
+    </tbody>
   </table>
-
-  <script>
-    // Guardar y cargar tareas usando localStorage
-    document.addEventListener("DOMContentLoaded", function () {
-      const celdas = document.querySelectorAll("td[id]");
-      celdas.forEach(celda => {
-        const id = celda.id;
-        const textarea = celda.querySelector("textarea");
-        if (textarea) {
-          textarea.value = localStorage.getItem(id) || "";
-          textarea.addEventListener("input", () => {
-            localStorage.setItem(id, textarea.value);
-          });
-        }
-      });
-    });
-
-    function limpiarTareas() {
-      if (confirm("¿Estás seguro de que deseas borrar todas las tareas?")) {
-        const celdas = document.querySelectorAll("td[id]");
-        celdas.forEach(celda => {
-          const id = celda.id;
-          const textarea = celda.querySelector("textarea");
-          if (textarea) {
-            localStorage.removeItem(id);
-            textarea.value = "";
-          }
-        });
-      }
-    }
-
-    function exportarPDF() {
-      window.print(); // Simple export a PDF usando impresión del navegador
-    }
-  </script>
 </body>
 </html>
-

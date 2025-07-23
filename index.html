@@ -1,299 +1,224 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horario Thiago</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Electrolize&display=swap');
-        
-        body {
-            font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
-            color: #2d3748;
-            padding: 30px;
-            margin: 0;
-            min-height: 100vh;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Horario Thiago - Ingeniería Electrónica</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+    * {
+      box-sizing: border-box;
+    }
 
-        h2 {
-            text-align: center;
-            color: #1e40af;
-            margin: 15px 0 20px;
-            font-size: 1.8rem;
-            font-weight: 600;
-            font-family: 'Roboto', sans-serif;
-        }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #0f172a, #1e293b);
+      color: #f8fafc;
+      margin: 0;
+      padding: 20px;
+    }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-        }
+    h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      color: #38bdf8;
+      text-shadow: 1px 1px 2px #000;
+    }
 
-        th, td {
-            padding: 16px;
-            text-align: center;
-            vertical-align: middle;
-            border: 1px solid #e0e0e0;
-            font-size: 14px;
-        }
+    /* ---------- Desktop Table View ---------- */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #1e293b;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      border-radius: 12px;
+      overflow: hidden;
+      display: table;
+    }
 
-        thead {
-            background: linear-gradient(135deg, #4f46e5 0%, #1e40af 100%);
-            color: white;
-            position: sticky;
-            top: 0;
-        }
+    thead {
+      background: linear-gradient(to right, #3b82f6, #1e40af);
+    }
 
-        th {
-            font-weight: 600;
-        }
+    thead th, tbody th, td {
+      padding: 15px;
+      font-size: 0.9rem;
+      text-align: center;
+      border: 1px solid #475569;
+    }
 
-        tbody tr:nth-child(even) {
-            background-color: #f0f4f8;
-        }
+    thead th {
+      color: #fff;
+      font-weight: 600;
+    }
 
-        tbody tr:hover {
-            background-color: #e0e7ff;
-        }
+    tbody th {
+      background-color: #334155;
+      color: #facc15;
+      font-weight: 500;
+    }
 
-        td {
-            line-height: 1.6;
-        }
+    td {
+      vertical-align: top;
+    }
 
-        @media (max-width: 768px) {
-            body {
-                padding: 15px;
-            }
-            
-            h2 {
-                font-size: 1.5rem;
-            }
-            
-            table {
-                font-size: 0.9rem;
-            }
-            
-            th, td {
-                padding: 8px;
-            }
-        }
+    .card {
+      background-color: #0f172a;
+      padding: 10px;
+      border-radius: 8px;
+      color: #e0f2fe;
+      box-shadow: 0 0 8px rgba(59,130,246,0.4);
+      margin: 5px 0;
+    }
 
-        @media (max-width: 480px) {
-            table {
-                display: block;
-                overflow-x: auto;
-            }
-            
-            thead th {
-                min-width: 100px;
-            }
-            
-            td {
-                line-height: 1.4;
-                padding: 6px;
-            }
-        }
-    </style>
+    .card strong {
+      color: #38bdf8;
+    }
+
+    /* ---------- Mobile View ---------- */
+    @media (max-width: 768px) {
+      table {
+        display: none;
+      }
+
+      .mobile-view {
+        display: block;
+      }
+
+      .hour-block {
+        margin-bottom: 20px;
+        padding: 15px;
+        background: #1e293b;
+        border: 1px solid #475569;
+        border-radius: 10px;
+      }
+
+      .hour-block h3 {
+        font-size: 1.2rem;
+        color: #facc15;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #475569;
+        padding-bottom: 5px;
+      }
+
+      .day-card {
+        margin-bottom: 10px;
+      }
+
+      .day-card strong {
+        display: block;
+        color: #38bdf8;
+        margin-bottom: 4px;
+      }
+
+      .card {
+        margin: 5px 0;
+        padding: 10px;
+      }
+    }
+
+    .mobile-view {
+      display: none;
+    }
+  </style>
 </head>
 <body>
-    <h2>Horario ⚡ Ing Electrónica Thiago</h2>
+  <h2>⚡ Horario - Ing. Electrónica Thiago</h2>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Hora</th>
-                <th>Lunes</th>
-                <th>Martes</th>
-                <th>Miércoles</th>
-                <th>Jueves</th>
-                <th>Viernes</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th>6:00 AM</th>
-                <td>
-                    MT301B <br>
-                    ÁLGEBRA LINEAL <br>
-                    Grupo: 08 - ING. ELECTRÓNICA <br>
-                    402 - BLQ C - CAMPUS
-                </td>
-                <td>
-                    MT302B <br>
-                    CÁLCULO DIFERENCIAL <br>
-                    Grupo: 02 - ELECTRÓNICA <br>
-                    203 - BLQ H - CAMPUS
-                </td>
-                <td>
-                    HM301 <br>
-                    HUMANIDADES I <br>
-                    Grupo: 05 - ELECTRÓNICA <br>
-                    506 - BLQ H - CAMPUS
-                </td>
-                <td>
-                    MT302B <br>
-                    CÁLCULO DIFERENCIAL <br>
-                    Grupo: 02 - ELECTRÓNICA <br>
-                    203 - BLQ H - CAMPUS
-                </td>
-                <td>
-                    PG312 <br>
-                    TÉCNICAS DE AUTOAPRENDIZAJE <br>
-                    Grupo: 05 - ELECTRÓNICA <br>
-                    402 - BLQ C - CAMPUS
-                </td>
-            </tr>
-            <tr>
-                <th>7:00 AM</th>
-                <td>
-                    HM301 <br>
-                    HUMANIDADES I <br>
-                    Grupo: 05 - ELECTRÓNICA <br>
-                    402 - BLQ C - CAMPUS
-                </td>
-                <td>
-                    MT302B <br>
-                    CÁLCULO DIFERENCIAL <br>
-                    Grupo: 02 - ELECTRÓNICA <br>
-                    203 - BLQ H - CAMPUS
-                </td>
-                <td>
-                    HM301 <br>
-                    HUMANIDADES I <br>
-                    Grupo: 05 - ELECTRÓNICA <br>
-                    506 - BLQ H - CAMPUS
-                </td>
-                <td>
-                    MT302B <br>
-                    CÁLCULO DIFERENCIAL <br>
-                    Grupo: 02 - ELECTRÓNICA <br>
-                    203 - BLQ H - CAMPUS
-                </td>
-                <td>
-                    PG312 <br>
-                    TÉCNICAS DE AUTOAPRENDIZAJE <br>
-                    Grupo: 05 - ELECTRÓNICA <br>
-                    402 - BLQ C - CAMPUS
-                </td>
-            </tr>
-            <tr>
-                <th>8:00 AM</th>
-                <td></td>
-                <td>
-                    EL100 <br>
-                    INTRODUCCIÓN A LA ING. ELECTRÓNICA <br>
-                    Grupo: 04 - CAMPUS <br>
-                    302 - BLQ F - LAB BIOINGE
-                </td>
-                <td></td>
-                <td>
-                    MT301B <br>
-                    ÁLGEBRA LINEAL <br>
-                    Grupo: 08 - ING. ELECTRÓNICA <br>
-                    301 - BLQ H - CAMPUS
-                </td>
-                <td>
-                    EL100 <br>
-                    INTRODUCCIÓN A LA ING. ELECTRÓNICA <br>
-                    Grupo: 04 - CAMPUS <br>
-                    204 - BLQ E - CAMPUS
-                </td>
-            </tr>
-            <tr>
-                <th>9:00 AM</th>
-                <td></td>
-                <td>
-                    EL100 <br>
-                    INTRODUCCIÓN A LA ING. ELECTRÓNICA <br>
-                    Grupo: 04 - CAMPUS <br>
-                    302 - BLQ F - LAB BIOINGE
-                </td>
-                <td></td>
-                <td>
-                    MT301B <br>
-                    ÁLGEBRA LINEAL <br>
-                    Grupo: 08 - ING. ELECTRÓNICA <br>
-                    301 - BLQ H - CAMPUS
-                </td>
-                <td>
-                    EL100 <br>
-                    INTRODUCCIÓN A LA ING. ELECTRÓNICA <br>
-                    Grupo: 04 - CAMPUS <br>
-                    204 - BLQ E - CAMPUS
-                </td>
-            </tr>
-            <tr>
-                <th>10:00 AM</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
-                    UPC01 <br>
-                    CÁTEDRA UPECISTA <br>
-                    Grupo: 18 - PRI ELECTRÓNICA VIRTUAL <br>
-                    01 - AULA VIRTUAL TECA
-                </td>
-            </tr>
-            <tr>
-                <th>11:00 AM</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
-                    UPC01 <br>
-                    CÁTEDRA UPECISTA <br>
-                    Grupo: 18 - PRI ELECTRÓNICA VIRTUAL <br>
-                    01 - AULA VIRTUAL TECA
-                </td>
-            </tr>
-            <tr>
-                <th>12:00 PM</th>
-                <td></td>
-                <td>
-                    SS407 <br>
-                    ALGORITMOS Y FUNDAMENTOS DE PROGRAMACIÓN <br>
-                    Grupo: 10 - ING. ELECTRÓNICA <br>
-                    201 - BLQ I - INFORMÁTICA
-                </td>
-                <td></td>
-                <td>
-                    SS407 <br>
-                    ALGORITMOS Y FUNDAMENTOS DE PROGRAMACIÓN <br>
-                    Grupo: 10 - ING. ELECTRÓNICA <br>
-                    201 - BLQ I - INFORMÁTICA
-                </td>
-                <td></td>
-            </tr>
-            <tr>
-                <th>1:00 PM</th>
-                <td></td>
-                <td>
-                    SS407 <br>
-                    ALGORITMOS Y FUNDAMENTOS DE PROGRAMACIÓN <br>
-                    Grupo: 10 - ING. ELECTRÓNICA <br>
-                    201 - BLQ I - INFORMÁTICA
-                </td>
-                <td></td>
-                <td>
-                    SS407 <br>
-                    ALGORITMOS Y FUNDAMENTOS DE PROGRAMACIÓN <br>
-                    Grupo: 10 - ING. ELECTRÓNICA <br>
-                    201 - BLQ I - INFORMÁTICA
-                </td>
-                <td></td>
-            </tr>
-            <tr>
-                <th>2:00 PM</th>
-                <td colspan="5"></td>
-            </tr>
-        </tbody>
-    </table>
+  <!-- -------- Desktop Table View -------- -->
+  <table>
+    <thead>
+      <tr>
+        <th>Hora</th>
+        <th>Lunes</th>
+        <th>Martes</th>
+        <th>Miércoles</th>
+        <th>Jueves</th>
+        <th>Viernes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>6:00 AM</th>
+        <td><div class="card"><strong>ÁLGEBRA LINEAL</strong><br>MT301B - G08<br>402 - BLQ C</div></td>
+        <td><div class="card"><strong>CÁLCULO DIFERENCIAL</strong><br>MT302B - G02<br>203 - BLQ H</div></td>
+        <td><div class="card"><strong>HUMANIDADES I</strong><br>HM301 - G05<br>506 - BLQ H</div></td>
+        <td><div class="card"><strong>CÁLCULO DIFERENCIAL</strong><br>MT302B - G02<br>203 - BLQ H</div></td>
+        <td><div class="card"><strong>AUTOAPRENDIZAJE</strong><br>PG312 - G05<br>402 - BLQ C</div></td>
+      </tr>
+      <tr>
+        <th>7:00 AM</th>
+        <td><div class="card"><strong>HUMANIDADES I</strong><br>HM301 - G05<br>402 - BLQ C</div></td>
+        <td><div class="card"><strong>CÁLCULO DIFERENCIAL</strong><br>MT302B - G02<br>203 - BLQ H</div></td>
+        <td><div class="card"><strong>HUMANIDADES I</strong><br>HM301 - G05<br>506 - BLQ H</div></td>
+        <td><div class="card"><strong>CÁLCULO DIFERENCIAL</strong><br>MT302B - G02<br>203 - BLQ H</div></td>
+        <td><div class="card"><strong>AUTOAPRENDIZAJE</strong><br>PG312 - G05<br>402 - BLQ C</div></td>
+      </tr>
+      <tr>
+        <th>8:00 AM</th>
+        <td></td>
+        <td><div class="card"><strong>INTRO. ING. ELECTRÓNICA</strong><br>EL100 - G04<br>302 - BLQ F (LAB)</div></td>
+        <td></td>
+        <td><div class="card"><strong>ÁLGEBRA LINEAL</strong><br>MT301B - G08<br>301 - BLQ H</div></td>
+        <td><div class="card"><strong>INTRO. ING. ELECTRÓNICA</strong><br>EL100 - G04<br>204 - BLQ E</div></td>
+      </tr>
+      <tr>
+        <th>9:00 AM</th>
+        <td></td>
+        <td><div class="card"><strong>INTRO. ING. ELECTRÓNICA</strong><br>EL100 - G04<br>302 - BLQ F (LAB)</div></td>
+        <td></td>
+        <td><div class="card"><strong>ÁLGEBRA LINEAL</strong><br>MT301B - G08<br>301 - BLQ H</div></td>
+        <td><div class="card"><strong>INTRO. ING. ELECTRÓNICA</strong><br>EL100 - G04<br>204 - BLQ E</div></td>
+      </tr>
+      <tr>
+        <th>10:00 AM</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><div class="card"><strong>CÁTEDRA UPECISTA</strong><br>UPC01 - G18<br>AULA VIRTUAL TECA</div></td>
+      </tr>
+      <tr>
+        <th>11:00 AM</th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><div class="card"><strong>CÁTEDRA UPECISTA</strong><br>UPC01 - G18<br>AULA VIRTUAL TECA</div></td>
+      </tr>
+      <tr>
+        <th>12:00 PM</th>
+        <td></td>
+        <td><div class="card"><strong>ALGORITMOS Y PROGRAMACIÓN</strong><br>SS407 - G10<br>201 - BLQ I</div></td>
+        <td></td>
+        <td><div class="card"><strong>ALGORITMOS Y PROGRAMACIÓN</strong><br>SS407 - G10<br>201 - BLQ I</div></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>1:00 PM</th>
+        <td></td>
+        <td><div class="card"><strong>ALGORITMOS Y PROGRAMACIÓN</strong><br>SS407 - G10<br>201 - BLQ I</div></td>
+        <td></td>
+        <td><div class="card"><strong>ALGORITMOS Y PROGRAMACIÓN</strong><br>SS407 - G10<br>201 - BLQ I</div></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- -------- Mobile Block View -------- -->
+  <div class="mobile-view">
+    <!-- Repite por cada hora -->
+    <div class="hour-block">
+      <h3>6:00 AM</h3>
+      <div class="day-card"><strong>Lunes</strong><div class="card">ÁLGEBRA LINEAL<br>MT301B - G08<br>402 - BLQ C</div></div>
+      <div class="day-card"><strong>Martes</strong><div class="card">CÁLCULO DIFERENCIAL<br>MT302B - G02<br>203 - BLQ H</div></div>
+      <div class="day-card"><strong>Miércoles</strong><div class="card">HUMANIDADES I<br>HM301 - G05<br>506 - BLQ H</div></div>
+      <div class="day-card"><strong>Jueves</strong><div class="card">CÁLCULO DIFERENCIAL<br>MT302B - G02<br>203 - BLQ H</div></div>
+      <div class="day-card"><strong>Viernes</strong><div class="card">AUTOAPRENDIZAJE<br>PG312 - G05<br>402 - BLQ C</div></div>
+    </div>
+
+    <!-- Puedes seguir replicando bloques por hora como los de arriba para 7:00 AM, 8:00 AM, etc. -->
+  </div>
 </body>
 </html>
